@@ -1,6 +1,7 @@
 package com.chung.os.threads;
 
 import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -13,7 +14,7 @@ public class SimpleThreadPoolExampleTest {
 		int expected = 5;
 		ExecutorService executor = Executors.newFixedThreadPool(expected);
 
-		HashSet<String> threadSet = new HashSet<>();
+		Set<String> threadSet = new HashSet<>();
 		for (int i=0; i<10; i++) {
 			Runnable worker = new WorkerThread(i+"번째", threadSet);
 			executor.execute(worker);
